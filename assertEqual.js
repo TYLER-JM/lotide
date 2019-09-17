@@ -1,6 +1,6 @@
 const assertEqual = function(actual, expected) {
   let wrong = String.fromCodePoint(0x274c);
-  let right = String.fromCharCode(0x2705);
+  let right = String.fromCodePoint(0x2705);
   if (actual === expected) {
     return `${right} Assertion Passed: ${actual} === ${expected}`;
   } else {
@@ -9,7 +9,7 @@ const assertEqual = function(actual, expected) {
 };
 
 //TEST CODE
-assertEqual("lighthouse Labs", "Bootcamp");
+console.log(assertEqual("lighthouse Labs", "Bootcamp"));
 assertEqual(1, 1);
-assertEqual("yes", "yes");
+console.log(assertEqual("yes", "yes"));
 assertEqual(2,5);

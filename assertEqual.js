@@ -2,12 +2,9 @@ const assertEqual = function(actual, expected) {
   let wrong = String.fromCodePoint(0x274c);
   let right = String.fromCharCode(0x2705);
   if (actual === expected) {
-    
-    //console.log(right + " Assertion Passed: " + actual + " === " + expected);
-    console.log(`${right} Assertion Passed: ${actual} === ${expected}`);
+    return `${right} Assertion Passed: ${actual} === ${expected}`;
   } else {
-    //console.log(wrong + " Assertion Failed: " + actual + " !== " + expected);
-    console.log(`${wrong} Assertion Failed: ${actual} !== ${expected}`);
+    return `${wrong} Assertion Failed: ${actual} !== ${expected}`;
   }
 };
 

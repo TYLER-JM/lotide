@@ -1,5 +1,3 @@
-const assertEqual = require("./assertEqual");
-
 const eqArrays = function(first, second) {
   if (first.length !== second.length) {
     return false;

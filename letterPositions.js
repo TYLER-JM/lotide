@@ -1,16 +1,22 @@
 
 const letterPositions = function(sentence) {
   let final = {};
-  let noSpace = sentence.split(" ").join("").toLowerCase();
+  sentence = sentence.toLowerCase();
 
-  for (let i = 0; i < noSpace.length; i++) {
-    if (final[noSpace[i]]) {
-      final[noSpace[i]].push(i);
+  for (let i = 0; i < sentence.length; i++) {
+    if (sentence[i] === " ") {
+      continue;
+    }
+    if (final[sentence[i]]) {
+      final[sentence[i]].push(i);
     } else {
-      final[noSpace[i]] = [i];
+      final[sentence[i]] = [i];
     }
   }
 
   return final;
 };
 module.exports = letterPositions;
+
+console.log(letterPositions("hello"));
+console.log(letterPositions("john TOM AlleN"));

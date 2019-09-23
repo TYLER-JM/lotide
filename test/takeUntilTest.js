@@ -1,12 +1,18 @@
 const takeUntil = require("../takeUntil");
+const assert = require("chai").assert;
 
-//TEST CODE
-const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
-const results1 = takeUntil(data1, x => x < 0);
-console.log(results1);
-
-console.log('---');
-
-const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
-const results2 = takeUntil(data2, x => x === ',');
-console.log(results2);
+describe("#takeUntil", () => {
+  it("should return an array...", () => {
+    const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
+    assert.deepEqual(takeUntil(data1, x => x < 0), [1,2,5,7,2]);
+  });
+  it("should return the whole array if callback never returns truthy", () => {
+    assert.deepEqual(takeUntil([1,2,3,4], x => x > 4), [1,2,3,4]);
+  });
+  it("should return an empty array when passed an empty array", () => {
+    assert.deepEqual(takeUntil([], x => x > 4), []);
+  });
+  it("should return...", () => {
+    assert.deepEqual(takeUntil([1,2,3,4], x => x > 0), []);
+  });
+});

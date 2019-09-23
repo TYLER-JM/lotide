@@ -43,4 +43,4 @@ The following functions are currently implemented:
 * `takeUntil(array, callback)`: Takes in an array and a callback function. Returns an array with all the items of the given array (from index [0]) until the callback returns a truthy value. The callback's argument is the item in the array.
 * `without(array1, array2)`: Takes in two arrays. And returns a new array with only the elements of the first array that are not present in the second array
 
-written by @TYLER-JM and @tammiec
+written by [@TYLER-JM](https://github.com/TYLER-JM) and [@tammiec](https://github.com/tammiec)

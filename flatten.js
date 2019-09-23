@@ -1,14 +1,12 @@
-const flatten = function(arr) {
+const flatten = function(array) {
   let newArray = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (Array.isArray(arr[i])) {
-      for (let j = 0; j < arr[i].length; j++) {
-        newArray.push(arr[i][j]);
-      }
+  array.forEach(item => {
+    if (Array.isArray(item)) {
+      newArray = newArray.concat(flatten(item));
     } else {
-      newArray.push(arr[i]);
+      newArray.push(item);
     }
-  }
+  });
   return newArray;
 };
 

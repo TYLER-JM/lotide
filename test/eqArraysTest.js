@@ -1,18 +1,22 @@
-const assertEqual = require("../assertEqual");
-const eqArrays = require("../eqArrays");
+const eqArrays = require('../eqArrays');
+const assert = require('chai').assert;
+describe('#eqArrays', () => {
+  it('should return true for [1, 2, 3] & [1, 2, 3]', () => {
+    assert.equal(eqArrays([1, 2, 3], [1, 2, 3]), true);
+  });
+  it('should return false for ["1", "2", "3"] & ["1", "2", 3]', () => {
+    assert.equal(eqArrays(["1", "2", "3"], ["1", "2", 3]), false);
+  });
+  it('should return true for [[2, 3], [4, [6, 7]]] & [[2, 3], [4, [6, 7]]]', () => {
+    assert.equal(eqArrays([[2, 3], [4, [6, 7]]], [[2, 3], [4, [6, 7]]]), true);
+  });
+  it('should return false for [[2, 3], [4, [6, 7]]] & [[2, 3], [4, [6, 7]]]', () => {
+    const nested1 = [1, [2, 3, 4], 5, 6, [7, [8, 9]]];
+    const nested1Twin = [1, [2, 3, 4], 5, "6", [7, [8, 9]]];
+    assert.equal(eqArrays(nested1, nested1Twin), false);
+  });
+});
 
-// TEST CODE
-const nested1 = [1, [2, 3, 4], 5, 6, [7, [8, 9]]];
-const nested1Twin = [1, [2, 3, 4], 5, "6", [7, [8, 9]]];
-const nested2 = [11, 12, [13], [14, [15, [16, 17], 18]], 19];
-const nested2Twin = [11, 12, [13], [14, [15, [16, 17], 18]], 19];
 
-console.log(assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true));
-console.log(assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false));
-console.log(assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false));
 
-console.log(assertEqual(eqArrays(["1", ["2", "3"], "4"], ["1", ["2", "3"], "4"]), true));
-console.log(assertEqual(eqArrays(nested1, nested2), false));
-console.log(assertEqual(eqArrays(nested2Twin, nested2), true));
-console.log(assertEqual(eqArrays(nested1, nested1Twin), false)); //changing the number 6 to a string "6" should have resulted in false?
-console.log(assertEqual(eqArrays([3,4], nested2Twin), false));
+

@@ -20,15 +20,13 @@
 // };
 
 const without = function(source, itemsToRemove) {
-  
-  let final = source.slice(0);
-
-  for (let i = 0; i < itemsToRemove.length; i++) {
-
-    if (final.includes(itemsToRemove[i])) {
-      final.splice(final.indexOf(itemsToRemove[i]), 1);
+  let removed = [];
+  for (let i of source) {
+    if (!itemsToRemove.includes(i)) {
+      removed.push(i);
     }
   }
-  return final;
+  return removed;
 };
+
 module.exports = without;

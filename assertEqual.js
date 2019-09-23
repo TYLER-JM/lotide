@@ -8,8 +8,4 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-//TEST CODE
-console.log(assertEqual("lighthouse Labs", "Bootcamp"));
-assertEqual(1, 1);
-console.log(assertEqual("yes", "yes"));
-assertEqual(2,5);
+module.exports = assertEqual;

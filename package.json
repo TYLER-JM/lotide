@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@tyler-jm/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "a mini copy of the Lodash library, for educational purposes",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/TYLER-JM/lotide.git"
   },
-  "author": "",
+  "author": "Tyler Martin @TYLER-JM (https://github.com/TYLER-JM)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/TYLER-JM/lotide/issues"
